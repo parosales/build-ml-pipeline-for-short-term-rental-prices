@@ -21,12 +21,12 @@ def go(args):
 
     # Download input artifact. This will also note that this script is using this
     # particular version of the artifact
-    logger.info(f"Fetching artifact {args.input}")
+    #logger.info(f"Fetching artifact {args.input}")
     artifact_local_path = run.use_artifact(args.input).file()
 
     df = pd.read_csv(artifact_local_path)
 
-    logger.info("Splitting trainval and test")
+    #logger.info("Splitting trainval and test")
     trainval, test = train_test_split(
         df,
         test_size=args.test_size,
